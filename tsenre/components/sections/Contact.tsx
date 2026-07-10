@@ -73,15 +73,37 @@ const INFO_ITEMS = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    // Placeholder submit handler — wire up to an email service or API route.
-    setTimeout(() => {
-      setSubmitting(false);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = Object.fromEntries(data.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+
       setSubmitted(true);
-    }, 900);
+      form.reset();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -135,12 +157,22 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-5">
+                {/* Honeypot field — hidden from real visitors, catches simple bots */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div className="sm:col-span-1">
                   <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
                     Full Name
                   </label>
                   <input
                     id="name"
+                    name="name"
                     required
                     type="text"
                     placeholder="John Doe"
@@ -153,6 +185,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="email"
+                    name="email"
                     required
                     type="email"
                     placeholder="john@company.com"
@@ -165,6 +198,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="+234 800 000 0000"
                     className="w-full rounded-xl border border-ink/10 bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/40 focus:border-ocean-500 transition-all"
@@ -176,6 +210,7 @@ export default function Contact() {
                   </label>
                   <input
                     id="company"
+                    name="company"
                     type="text"
                     placeholder="Company name"
                     className="w-full rounded-xl border border-ink/10 bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/40 focus:border-ocean-500 transition-all"
@@ -187,12 +222,18 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={5}
                     placeholder="Tell us about your project requirements..."
                     className="w-full rounded-xl border border-ink/10 bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/40 focus:border-ocean-500 transition-all resize-none"
                   />
                 </div>
+                {error && (
+                  <div className="sm:col-span-2 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                    {error}
+                  </div>
+                )}
                 <div className="sm:col-span-2">
                   <button type="submit" disabled={submitting} className="btn-primary w-full sm:w-auto disabled:opacity-70">
                     {submitting ? "Sending..." : "Send Message"}

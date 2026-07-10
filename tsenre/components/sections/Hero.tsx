@@ -114,7 +114,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-14 flex items-center gap-8"
+              className="mt-10 sm:mt-14 flex items-center gap-8"
             >
               {[
                 ["20+", "Years"],
@@ -167,17 +167,18 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <motion.div
+      <motion.a
+        href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-white/70 cursor-pointer hover:text-white transition-colors"
       >
         <span className="coord-label text-white/60">Scroll</span>
         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
           <ChevronDown className="h-5 w-5" />
         </motion.div>
-      </motion.div>
+      </motion.a>
     </section>
   );
 }
