@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ocean-500/10;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-ink;
+  }
+  ::selection {
+    @apply bg-accent-400/30 text-ocean-800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  /* Signature: schematic coordinate label, echoes engineering drawing annotations */
+  .coord-label {
+    @apply font-body text-[11px] tracking-[0.25em] uppercase text-ocean-500/70 font-semibold;
+  }
+
+  /* Signature: blueprint grid backdrop */
+  .blueprint {
+    background-image:
+      linear-gradient(rgba(0, 119, 182, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 119, 182, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .blueprint-dark {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Signature: crosshair corner marks, echoes the derrick-crosshair in the logo */
+  .corner-marks {
+    position: relative;
+  }
+  .corner-marks::before,
+  .corner-marks::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(249, 115, 22, 0.6);
+    pointer-events: none;
+  }
+  .corner-marks::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .corner-marks::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 coord-label mb-4;
+  }
+  .section-eyebrow::before {
+    content: "";
+    @apply w-6 h-[2px] bg-accent-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent-400 px-7 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:bg-accent-500 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline-ocean {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ocean-500 px-7 py-3.5 text-sm font-semibold text-ocean-500 transition-all duration-300 hover:bg-ocean-500 hover:text-white;
+  }
+
+  .card-surface {
+    @apply rounded-xl2 bg-white shadow-card transition-all duration-300;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+}
+
+.font-mono-num {
+  font-variant-numeric: tabular-nums;
+}
