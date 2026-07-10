@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { NAV_LINKS, SERVICES, CONTACT_INFO, COMPANY_INFO } from "@/lib/data";
 
 export default function Footer() {
@@ -21,13 +21,11 @@ export default function Footer() {
               Engineering excellence for the energy &amp; industrial sector across Nigeria.
             </p>
             <a
-              href={`https://wa.me/${CONTACT_INFO.whatsapp[0].replace(/[\s+]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${CONTACT_INFO.email}`}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2.5 text-sm text-ocean-100/80 hover:bg-accent-400 hover:text-white transition-colors duration-300"
             >
-              <MessageCircle className="h-4 w-4" />
-              Chat on WhatsApp
+              <Mail className="h-4 w-4" />
+              Email Us
             </a>
           </div>
 
