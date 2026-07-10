@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2 } from "lucide-react";
-import { CONTACT_INFO } from "@/lib/data";
+import { CONTACT_INFO, gmailComposeUrl } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const INFO_ITEMS = [
@@ -53,7 +53,12 @@ const INFO_ITEMS = [
     icon: Mail,
     label: "Email",
     content: (
-      <a href={`mailto:${CONTACT_INFO.email}`} className="text-sm text-ink leading-relaxed hover:text-ocean-500 transition-colors">
+      <a
+        href={gmailComposeUrl(CONTACT_INFO.email, "Website Inquiry")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-ink leading-relaxed hover:text-ocean-500 transition-colors"
+      >
         {CONTACT_INFO.email}
       </a>
     ),

@@ -367,8 +367,16 @@ export const QUALITY_POLICY_STATEMENT = {
 
 export const CONTACT_INFO = {
   address: "#2 Success Lane, Off Shedrack Avenue, Apamini Estate, Elelenwo, Obio/Akpor L.G.A, Rivers State, Nigeria",
-  phones: ["+234 810 597 5042", "+234 902 397 2972"],
-  whatsapp: ["+234 811 855 3771", "+234 705 658 6909"],
+  phones: ["+234 810 597 5042", "+234 811 855 3741"],
+  whatsapp: ["+234 811 855 3771"],
   email: "tsenretechnologies@gmail.com",
   hours: "Mon – Fri: 8:00 AM – 5:00 PM",
 };
+
+// Opens Gmail's web compose window directly — unlike mailto:, this works on any
+// desktop browser regardless of whether a default email app is configured.
+export function gmailComposeUrl(email: string, subject?: string) {
+  const params = new URLSearchParams({ view: "cm", fs: "1", to: email });
+  if (subject) params.set("su", subject);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
