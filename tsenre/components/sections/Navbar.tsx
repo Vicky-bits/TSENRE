@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="relative h-11 w-11">
             <Image src="/images/logo.png" alt="TSENRE Technologies Limited" fill className="object-contain" priority />
           </div>
-          <div className="leading-tight hidden sm:block">
+          <div className="leading-tight sm:block">
             <p className={`font-heading font-bold text-[15px] tracking-tight ${scrolled ? "text-ocean-800" : "text-white"}`}>
               TSENRE
             </p>
