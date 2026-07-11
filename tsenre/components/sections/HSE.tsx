@@ -13,7 +13,7 @@ export default function HSE() {
         <SectionHeading
           eyebrow="Health, Safety & Environment"
           title="A Zero-Compromise Safety Culture"
-          description="HSE is not a department at TSENRE — it is a discipline embedded in every site, every crew and every decision we make."
+          description="HSE is not a department at TSENRE. It is a discipline embedded in every site, every crew and every decision we make."
           align="center"
           light
         />

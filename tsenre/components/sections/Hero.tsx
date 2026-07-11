@@ -118,7 +118,7 @@ export default function Hero() {
             >
               {[
                 ["20+", "Years"],
-                ["3000+", "Projects"],
+                ["2900+", "Projects"],
                 ["100%", "Satisfaction"],
               ].map(([num, label]) => (
                 <div key={label} className="border-l border-white/20 pl-4">

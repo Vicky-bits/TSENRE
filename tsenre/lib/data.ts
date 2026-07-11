@@ -39,14 +39,14 @@ export const COMPANY_INFO = {
   corporateBrief:
     "TSENRE Technologies Limited is an indigenous company registered under the laws of the Federal Republic of Nigeria, providing services to multinational organizations in tank and instrument calibration, pressure and leak testing, non-destructive testing, hull thickness gauging, lifting equipment inspection, instrumentation and control, engineering design, and procurement of technical and safety equipment.",
   corporateBriefSecondary:
-    "We build our profile through the integration of motivated people, innovative technology and rigorous standards — prioritizing safer working conditions to create a competitive advantage for our clients.",
+    "We build our profile through the integration of motivated people, innovative technology and rigorous standards prioritizing safer working conditions to create a competitive advantage for our clients.",
 };
 
 export const MISSION_VISION_VALUES = {
   vision:
     "To be a world-class service provider in our field through the provision of unparalleled services, using cutting-edge technology, integrity and a continual improvement approach.",
   mission:
-    "To understand, meet and exceed our customers' present and future needs for high quality, value for money and reliable service — while developing local skills and setting the industry standard for quality.",
+    "To understand, meet and exceed our customers' present and future needs for high quality, value for money and reliable service while developing local skills and setting the industry standard for quality.",
   coreValues: ["Professionalism", "Innovation", "Team Work", "Standard"],
 };
 
@@ -68,7 +68,7 @@ export const SERVICES: Service[] = [
     icon: Gauge,
     title: "Calibration of Equipment",
     description:
-      "Tank and instrument calibration, pressure/leak testing, hydro testing and hull thickness gauging — backed by certified procedures and precision reference standards.",
+      "Tank and instrument calibration, pressure/leak testing, hydro testing and hull thickness gauging, backed by certified procedures and precision reference standards.",
   },
   {
     icon: ArrowUpFromLine,
@@ -140,7 +140,7 @@ export const WHY_CHOOSE_US: WhyCard[] = [
   {
     icon: ShieldCheck,
     title: "Safety Compliance",
-    description: "Zero-compromise HSE culture embedded in every project, every site, every day.",
+    description: "Zero-compromise HSE culture embedded in every project, every site and every day.",
   },
   {
     icon: Cpu,
@@ -177,7 +177,7 @@ export type Stat = {
 
 export const STATS: Stat[] = [
   { label: "Years of Experience", value: 20, suffix: "+" },
-  { label: "Projects Completed", value: 3000, suffix: "+" },
+  { label: "Projects Completed", value: 2900, suffix: "+" },
   { label: "Engineering Services", value: 10, suffix: "+" },
   { label: "Client Satisfaction", value: 100, suffix: "%" },
 ];
@@ -368,7 +368,7 @@ export const QUALITY_BADGES = [
 // Real, signed Quality Policy statement from TSENRE's corporate profile.
 export const QUALITY_POLICY_STATEMENT = {
   paragraphs: [
-    "TSENRE Technologies Limited is an inspection company committed to providing reliable, non-defect service that meets and exceeds the expectations of our clients. Error-free work builds our reputation — it attracts business and protects our future.",
+    "TSENRE Technologies Limited is an inspection company committed to providing reliable, non-defect service that meets and exceeds the expectations of our clients. Error-free work builds our reputation, it attracts business and protects our future.",
     "We will always strive to exceed customer expectations, because our business future depends on quality today. TSENRE Technologies Limited actively pursues continual improvement through programs that enable every employee to do their job right, first time and every time.",
   ],
   signatory: "Prince Ernest Udoaka",

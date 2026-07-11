@@ -113,7 +113,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Get In Touch"
           title="Let's Discuss Your Next Project"
-          description="Reach out for inspection, calibration or engineering support — our team responds within one business day."
+          description="Reach out for inspection, calibration or engineering support. Our team responds within one business day."
         />
 
         <div className="mt-14 grid lg:grid-cols-[0.85fr_1.15fr] gap-10">
@@ -175,7 +175,7 @@ export default function Contact() {
                     name="name"
                     required
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Edward Peters"
                     className="w-full rounded-xl border border-ink/10 bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/40 focus:border-ocean-500 transition-all"
                   />
                 </div>
@@ -188,7 +188,7 @@ export default function Contact() {
                     name="email"
                     required
                     type="email"
-                    placeholder="john@company.com"
+                    placeholder="edward@company.com"
                     className="w-full rounded-xl border border-ink/10 bg-surface px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ocean-500/40 focus:border-ocean-500 transition-all"
                   />
                 </div>
