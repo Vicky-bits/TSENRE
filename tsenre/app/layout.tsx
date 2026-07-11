@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     "Industrial Engineering Nigeria",
   ],
   authors: [{ name: "TSENRE Technologies Limited" }],
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
@@ -47,30 +50,21 @@ export const metadata: Metadata = {
     title: "TSENRE Technologies Limited | Engineering Excellence for the Energy & Industrial Sector",
     description:
       "Delivering world-class inspection, calibration, engineering, procurement, instrumentation and industrial solutions across Nigeria.",
-    images: [
-      {
-        url: "/images/hero-industrial.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TSENRE Technologies Limited industrial operations",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TSENRE Technologies Limited",
     description:
       "Engineering excellence for the energy & industrial sector across Nigeria.",
-    images: ["/images/hero-industrial.jpg"],
-  },
-  icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0077B6",
 };
 
 const jsonLd = {
