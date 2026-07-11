@@ -159,6 +159,16 @@ export const WHY_CHOOSE_US: WhyCard[] = [
   },
 ];
 
+export type Client = {
+  name: string;
+  logo: string;
+};
+
+export const CLIENTS: Client[] = [
+  { name: "LEEA — Lifting Equipment Engineers Association", logo: "/images/clients/leea.jpg" },
+  { name: "IADC — International Association of Drilling Contractors", logo: "/images/clients/iadc.jpg" },
+];
+
 export type Stat = {
   label: string;
   value: number;
