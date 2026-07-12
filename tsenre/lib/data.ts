@@ -159,15 +159,15 @@ export const WHY_CHOOSE_US: WhyCard[] = [
   },
 ];
 
-export type Client = {
-  name: string;
-  logo: string;
-};
+// export type Client = {
+//   name: string;
+//   logo: string;
+// };
 
-export const CLIENTS: Client[] = [
-  { name: "LEEA — Lifting Equipment Engineers Association", logo: "/images/clients/leea.jpg" },
-  { name: "IADC — International Association of Drilling Contractors", logo: "/images/clients/iadc.jpg" },
-];
+// export const CLIENTS: Client[] = [
+//   { name: "LEEA — Lifting Equipment Engineers Association", logo: "/images/clients/leea.jpg" },
+//   { name: "IADC — International Association of Drilling Contractors", logo: "/images/clients/iadc.jpg" },
+// ];
 
 export type Stat = {
   label: string;
@@ -400,6 +400,14 @@ export const CERTIFICATIONS = [
   {
     name: "NUPRC",
     logo: "/images/certifications/nuprc.png",
+  },
+  {
+    name: "LEEA",
+    logo: "/images/certifications/leea.png",
+  },
+  {
+    name: "IADC",
+    logo: "/images/certifications/iadc.png",
   },
 ];
 // Real, signed Quality Policy statement from TSENRE's corporate profile.
