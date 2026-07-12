@@ -316,7 +316,6 @@ export const PROJECTS: Project[] = [
     media: [
       { type: "image", src: "/images/projects/pipeline-inspection/img-1.jpg" },
       { type: "image", src: "/images/projects/pipeline-inspection/img-2.jpg" },
-      { type: "image", src: "/images/projects/pipeline-inspection/img-3.jpg" },
       { type: "image", src: "/images/projects/pipeline-inspection/img-4.jpg" },
     ],
   },

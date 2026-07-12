@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { NAV_LINKS, SERVICES, CONTACT_INFO, COMPANY_INFO, gmailComposeUrl } from "@/lib/data";
+import { NAV_LINKS, SERVICES, CONTACT_INFO, COMPANY_INFO } from "@/lib/data";
+import { handleSmartEmailClick } from "@/lib/useSmartEmail";
 
 export default function Footer() {
   return (
@@ -21,9 +23,8 @@ export default function Footer() {
               Engineering excellence for the energy &amp; industrial sector across Nigeria.
             </p>
             <a
-              href={gmailComposeUrl(CONTACT_INFO.email, "Website Inquiry")}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent("Website Inquiry")}`}
+              onClick={handleSmartEmailClick(CONTACT_INFO.email, "Website Inquiry")}
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2.5 text-sm text-ocean-100/80 hover:bg-accent-400 hover:text-white transition-colors duration-300"
             >
               <Mail className="h-4 w-4" />
@@ -75,9 +76,8 @@ export default function Footer() {
               <li className="flex items-center gap-3 text-sm text-ocean-100/70">
                 <Mail className="h-4 w-4 shrink-0 text-accent-400" />
                 <a
-                  href={gmailComposeUrl(CONTACT_INFO.email, "Website Inquiry")}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent("Website Inquiry")}`}
+                  onClick={handleSmartEmailClick(CONTACT_INFO.email, "Website Inquiry")}
                   className="hover:text-accent-300 transition-colors"
                 >
                   {CONTACT_INFO.email}
