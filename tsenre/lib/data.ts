@@ -384,6 +384,24 @@ export const QUALITY_BADGES = [
   { tag: `RC ${"7449180"}`, label: "Registered in Nigeria" },
 ];
 
+export const CERTIFICATIONS = [
+  {
+    name: "ASNT",
+    logo: "/images/certifications/asnt.png",
+  },
+  {
+    name: "British Safety Council",
+    logo: "/images/certifications/bsc.png",
+  },
+  {
+    name: "NMDPRA",
+    logo: "/images/certifications/nmdpra.png",
+  },
+  {
+    name: "NUPRC",
+    logo: "/images/certifications/nuprc.png",
+  },
+];
 // Real, signed Quality Policy statement from TSENRE's corporate profile.
 export const QUALITY_POLICY_STATEMENT = {
   paragraphs: [

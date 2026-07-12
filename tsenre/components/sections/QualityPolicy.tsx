@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import { QUALITY_POINTS, QUALITY_BADGES, QUALITY_POLICY_STATEMENT } from "@/lib/data";
+import { QUALITY_POINTS, QUALITY_BADGES, QUALITY_POLICY_STATEMENT, CERTIFICATIONS } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function QualityPolicy() {
@@ -69,6 +70,32 @@ export default function QualityPolicy() {
             </div>
           </motion.div>
         </div>
+         {/* Certifications & memberships — regulatory bodies and associations, distinct from clients */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 pt-14 border-t border-ink/10"
+        >
+          <p className="coord-label text-center justify-center flex before:hidden mb-9">
+            Certifications &amp; Memberships
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
+            {CERTIFICATIONS.map((cert, i) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="relative h-16 w-24 sm:h-20 sm:w-28"
+              >
+                <Image src={cert.logo} alt={cert.name} fill className="object-contain" />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
