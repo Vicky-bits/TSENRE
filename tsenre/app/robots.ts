@@ -1,15 +1,15 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function robots(): MetadataRoute.Robots {
   const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "https://www.tsenretechnologiesltdng.com";
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
     },
-  ];
+    sitemap: `${baseUrl}/sitemap.xml`,
+  };
 }

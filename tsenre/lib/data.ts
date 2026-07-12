@@ -246,8 +246,8 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Calibration & Hydrotest Services",
-    category: "Calibration",
+    title: "Pressure & Hydrotest Services",
+    category: "Pressure",
     slug: "calibration-hydrotest",
     media: [
       { type: "image", src: "/images/projects/calibration-hydrotest/img-1.jpg" },
@@ -261,7 +261,7 @@ export const PROJECTS: Project[] = [
     media: [{ type: "image", src: "/images/projects/crane-inspection/img-1.jpg" }],
   },
   {
-    title: "Crane & Valve Maintenance",
+    title: "Crane Maintenance",
     category: "Lifting Equipment Inspection",
     slug: "crane-valve-maintenance",
     media: [
@@ -320,7 +320,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    title: "Rig Survey & Wire Rope Inspection",
+    title: "Rig Survey",
     category: "Lifting Equipment Inspection",
     slug: "rig-survey-wire-rope-inspection",
     media: [

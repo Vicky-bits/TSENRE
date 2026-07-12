@@ -18,7 +18,16 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://www.tsenretechnologiesltdng.com";
+// Auto-detects whichever domain is actually live right now:
+// - On Vercel, VERCEL_PROJECT_PRODUCTION_URL always reflects the real production
+//   domain for this project — today that's tsenre-rsa5.vercel.app, and it will
+//   automatically become tsenretechnologiesltdng.com the moment that domain is
+//   connected in Vercel's dashboard, with zero code changes needed.
+// - Locally (npm run dev), that variable doesn't exist, so it falls back to the
+//   intended domain — harmless, since local dev is never crawled by real bots.
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://www.tsenretechnologiesltdng.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
