@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL || "TSENRE Website <noreply@send.tsenretechnologiesltdng.com>",
+      from: process.env.CONTACT_FROM_EMAIL || "TSENRE Website <noreply@tsenretechnologiesltdng.com>",
       to: process.env.CONTACT_TO_EMAIL || CONTACT_INFO.email,
       replyTo: email,
       subject: `New Website Inquiry from ${name}`,
